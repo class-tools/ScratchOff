@@ -12,7 +12,7 @@ import pygame
 # Constant
 IMAGEDIR = 'pictures'
 SUPPORTEXTS = ['jpg', 'png', 'bmp']
-SCREENSIZE = (800, 600)
+SCREENSIZE = (800, 750)
 WHITE = (255, 255, 255, 27)
 GRAY = (192, 192, 192)
 sys_lang = hex(ctypes.windll.kernel32.GetSystemDefaultUILanguage())
