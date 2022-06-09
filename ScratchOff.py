@@ -92,7 +92,7 @@ def getTime(log):
 def quit():
     printLog("INFO","Exiting ScratchOff.")
     pygame.quit()
-    sys.exit(-1)
+    sys.exit(1)
 
 # Create log
 os.system("md log > temp.txt 2> temp2.txt")
