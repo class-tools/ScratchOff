@@ -3,3 +3,4 @@ pictures/
 *.exe
 Releases/
 log/
+*.txt
