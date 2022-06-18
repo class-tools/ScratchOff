@@ -1,4 +1,13 @@
-# ScratchOff
+<p align="center">
+<img src="https://user-images.githubusercontent.com/106530969/173475662-c4ea40c1-3a3b-467e-8dfe-56c8748175e7.png" width="200">
+</p>
+
+<h1 align="center">- ScratchOff -</h1>
+
+<p align="center">
+<img src="https://img.shields.io/github/v/release/class-tools/ScratchOff.svg?logo=iCloud">
+<img src="https://img.shields.io/badge/support-Windows%207%20+-blue?logo=Windows">
+</p>
 
 A small scratch off program. (luck draw)
 
