@@ -1,4 +1,13 @@
-# ScratchOff
+<p align="center">
+<img src="https://user-images.githubusercontent.com/106530969/173475662-c4ea40c1-3a3b-467e-8dfe-56c8748175e7.png" width="200">
+</p>
+
+<h1 align="center">- 刮刮乐 -</h1>
+
+<p align="center">
+<img src="https://img.shields.io/github/v/release/class-tools/ScratchOff.svg?logo=iCloud">
+<img src="https://img.shields.io/badge/support-Windows%207%20+-blue?logo=Windows">
+</p>
 
 一个使用 Python 制作的小型 GUI 刮刮乐程序。
 
