@@ -3,8 +3,8 @@
 name: "CodeQL Code Static Scanning"
 
 on:
-  schedule:
-    - cron: '30 01 * * MON'
+  push:
+    branches: [ 'master' ]
 
 jobs:
   analyze:
