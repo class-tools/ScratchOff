@@ -8,7 +8,41 @@ This change log supports two languages: `en-Us` `zh-Hans`. (**Every two lines, t
 
 这个更新日志支持两个语言：`en-Us` `zh-Hans`。（**每两行第一行为 `en-Us` 第二行为 `zh-Hans`**）
 
-## Init & 1.0.0.x
+## 1.1.0
+
+Add log output.
+
+添加日志输出。
+
+Add auto resize pictures.
+
+添加自动重置图片大小。
+
+Add icon.
+
+添加图标。
+
+Add watermark.
+
+添加版本号水印。
+
+Restructure file I/O.
+
+重构文件读写。
+
+Add auto center window.
+
+添加自动居中窗口。
+
+Add no font error window, no icon error window, cannot output log error window.
+
+添加无字体错误、无图标错误、无法输出日志错误的弹窗。
+
+Fix use unsupported picture quit.
+
+修复了使用不支持的图片会闪退。
+
+## 1.0.0
 
 Add main source file.
 
