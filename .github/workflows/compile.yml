@@ -1,0 +1,49 @@
+---
+
+name: "Compile"
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  windows:
+    name: "Compile on Windows"
+    if: startsWith( github.event.head_commit.message, 'VER' )
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install Python 3.8.10 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8.10"
+          architecture: "x64"
+      - name: Install Python 3.8.10 x86
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8.10"
+          architecture: "x86"
+      - name: Compile
+        env:
+          python32: C:\hostedtoolcache\windows\Python\3.8.10\x86
+          python64: C:\hostedtoolcache\windows\Python\3.8.10\x64
+        run: |
+          python compile.py
+      - name: Get version and log
+        env:
+          MSG: ${{ toJSON(github.event.commits.*.message) }}
+          VER: ""
+          VERSION: ""
+          FILEPATH: ""
+        run: |
+          python ./.github/compile/version.py
+          ./version.ps1
+      - name: Publish to Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.VERSION }}
+          tag_name: ${{ env.VER }}
+          body_path: log.txt
+          prerelease: ${{ contains( env.VER, '-' ) && !contains( env.VER, '-patch' ) }}
+          files: ${{ env.FILEPATH }}

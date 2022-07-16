@@ -1,6 +1,18 @@
+# Config files
 .vscode/
-pictures/
+.vs/
 *.exe
+
+# Releases files
 Releases/
+
+# Log files
 log/
-*.txt
+
+# Wiki Files
+wiki/
+
+# Pyinstaller files
+*.spec
+build/
+dist/

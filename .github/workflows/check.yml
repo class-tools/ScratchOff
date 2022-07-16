@@ -1,0 +1,47 @@
+---
+
+name: "Check"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  commit:
+    name: "Check Commit Message"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Sutup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - name: Check commit messages
+        env:
+          COMMIT_MSG: ${{ toJson(github.event.commits.*.message) }}
+        run: |
+          npm config set registry http://registry.npmjs.org/
+          yarn config set registry https://registry.yarnpkg.com
+          yarn add ct-git-commit-msg-std
+          node ./node_modules/ct-git-commit-msg-std/check.js -c "$PWD/.gitmsgrc.cjs" -e COMMIT_MSG
+  autopep8:
+    name: "Auto PEP 8"
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Auto PEP 8
+        uses: peter-evans/autopep8@v1
+        with:
+          args: --recursive --in-place --aggressive --aggressive .
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "SUM Code Style\n\n*< Change Code Style."
+          title: SUM Code Style
+          body: "```plain\n*< Change Code Style.\n```"
+          branch: autopep8
