@@ -1,17 +1,17 @@
 # Import
+from _tkinter import TclError
+from PIL import Image, UnidentifiedImageError
+import tkinter.messagebox
+import tkinter
+import datetime
+import subprocess
+import time
+import ctypes
+import random
+import sys
+import pygame
 import os
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "0"
-import pygame
-import sys
-import random
-import ctypes
-import time
-import subprocess
-import datetime
-import tkinter
-import tkinter.messagebox
-from PIL import Image, UnidentifiedImageError
-from _tkinter import TclError
 
 # Constant
 IMAGEDIR = "pictures"
